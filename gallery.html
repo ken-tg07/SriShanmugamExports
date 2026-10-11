@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Sri Shanmugam Exports</title>
+    <meta name="description" content="Samples of men's, ladies' and kids' garment orders produced by Sri Shanmugam Exports, Aruppukottai, Tamil Nadu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header id="main-header" class="scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">Sri Shanmugam <span>Exports</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#process">Our Process</a></li>
+                    <li><a href="index.html#capabilities">Capabilities</a></li>
+                    <li><a href="index.html#markets">Markets</a></li>
+                    <li><a href="gallery.html" class="active">Our Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header text-center">
+            <div class="container fade-in-up">
+                <h1>Our <span>Work</span></h1>
+                <p>A selection of orders we have produced for buyers in men's, ladies' and kids' wear.</p>
+            </div>
+        </section>
+
+        <section class="gallery-page section-padding bg-light">
+            <div class="container">
+
+                <div class="gallery-filters" role="group" aria-label="Filter by category">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="mens">Men's</button>
+                    <button class="filter-btn" data-filter="ladies">Ladies'</button>
+                    <button class="filter-btn" data-filter="kids">Kids'</button>
+                </div>
+
+                <div class="gallery-grid">
+
+                    <!--
+                      TO ADD A NEW ORDER: copy one <figure> block, paste it at the top of this grid, then change:
+                        1. data-category  -> mens, ladies or kids
+                        2. img src        -> your file in assets/gallery/
+                        3. alt + caption  -> short description (style, print type, quantity)
+                    -->
+
+                    <figure class="gallery-item" data-category="mens">
+                        <img src="assets/gallery/order-01.jpg" alt="Men's round neck t-shirt with chest print" loading="lazy">
+                        <figcaption>
+                            <strong>Men's round neck t-shirt</strong>
+                            <span>12-colour chest print &middot; 5,000 pcs</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item" data-category="ladies">
+                        <img src="assets/gallery/order-02.jpg" alt="Ladies' t-shirt with embroidery" loading="lazy">
+                        <figcaption>
+                            <strong>Ladies' t-shirt</strong>
+                            <span>Embroidered logo &middot; 3,000 pcs</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item" data-category="kids">
+                        <img src="assets/gallery/order-03.jpg" alt="Kids' printed t-shirt" loading="lazy">
+                        <figcaption>
+                            <strong>Kids' t-shirt</strong>
+                            <span>Front print &middot; 4,000 pcs</span>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+                <p class="gallery-empty" hidden>No orders in this category yet.</p>
+            </div>
+        </section>
+
+        <section class="cta section-padding">
+            <div class="container text-center fade-in-up">
+                <h2>Want Something Similar?</h2>
+                <p>Send us your design and quantity. We will reply with a quotation and delivery plan.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Request a Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>Sri Shanmugam <span>Exports</span></h3>
+                <p>Garments Manufacturer & Exporter.<br>Sister concern: Sri Sidhi Vinayaga Exports.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#process">Process</a></li>
+                    <li><a href="index.html#capabilities">Capabilities</a></li>
+                    <li><a href="gallery.html">Our Work</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>Email: prem@srishanmugamexports.com</p>
+                <p>Phone: +91 97509 39528</p>
+                <p>Aruppukottai, Tamil Nadu, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Sri Shanmugam Exports. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

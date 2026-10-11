@@ -53,3 +53,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
     animatedElements.forEach(el => observer.observe(el));
 });
+
+// 4. Gallery: category filter + lightbox (runs only on gallery.html)
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.querySelector('.gallery-grid');
+    if (!grid) return;
+
+    const items = grid.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+    const emptyMsg = document.querySelector('.gallery-empty');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            let shown = 0;
+            items.forEach(item => {
+                const match = filter === 'all' || item.dataset.category === filter;
+                item.hidden = !match;
+                if (match) shown++;
+            });
+            emptyMsg.hidden = shown !== 0;
+        });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    const lbCaption = lightbox.querySelector('.lightbox-caption');
+
+    const close = () => { lightbox.hidden = true; lbImg.src = ''; };
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbCaption.textContent = item.querySelector('strong').textContent;
+            lightbox.hidden = false;
+        });
+    });
+
+    lightbox.addEventListener('click', e => { if (e.target !== lbImg) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+});
+
+// 5. Mobile menu toggle (the button existed but had no behaviour)
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const links = document.querySelector('.nav-links');
+    if (!btn || !links) return;
+    btn.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+});
