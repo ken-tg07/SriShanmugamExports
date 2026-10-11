@@ -87,8 +87,12 @@
                     </div>
 
                     <div class="contact-form-container fade-in-right">
-                        <!-- IMPORTANT: replace YOUR_FORM_ID with a real Formspree (formspree.io) endpoint, or the form will not deliver messages -->
-                        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="ae63b1ae-948b-40a2-a4ed-83e2e1edb060">
+<input type="hidden" name="subject" value="New enquiry from srishanmugamexports.com">
+<input type="hidden" name="from_name" value="Sri Shanmugam Exports Website">
+<input type="hidden" name="redirect" value="https://srishanmugamexports.com/thanks.html">
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
                                 <input type="text" id="name" name="name" required placeholder="Your name">
